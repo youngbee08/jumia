@@ -8,6 +8,7 @@ import NotFound from "./pages/404";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import UserProvider from "./hooks/UserContext";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
   return (
@@ -21,7 +22,9 @@ const App = () => {
 
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/dashboard" element={<Dashboard />} />
+            </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
