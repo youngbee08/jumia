@@ -9,6 +9,7 @@ import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import UserProvider from "./hooks/UserContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Posts from "./pages/Posts";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
 
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/posts" element={<Posts/>}/>
             <Route element={<ProtectedRoute />}>
               <Route path="/dashboard" element={<Dashboard />} />
             </Route>
