@@ -10,6 +10,8 @@ import Dashboard from "./pages/Dashboard";
 import UserProvider from "./hooks/UserContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Posts from "./pages/Posts";
+import Products from "./pages/Products";
+import SigngleProduct from "./pages/SigngleProduct";
 
 const App = () => {
   return (
@@ -23,7 +25,9 @@ const App = () => {
 
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/posts" element={<Posts/>}/>
+            <Route path="/posts" element={<Posts />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/:id" element={<SigngleProduct/>}/>
             <Route element={<ProtectedRoute />}>
               <Route path="/dashboard" element={<Dashboard />} />
             </Route>
